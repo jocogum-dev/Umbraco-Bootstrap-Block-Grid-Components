@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
+@{
+    var content = Model.Content;
+    var settings = Model.Settings;
+}
+<button type="button" class="btn @settings.Value("variant") @settings.Value("size")">
+    @content.Value("text")
+</button>

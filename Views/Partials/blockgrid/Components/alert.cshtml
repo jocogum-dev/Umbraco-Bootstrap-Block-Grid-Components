@@ -1,0 +1,8 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>;
+@{
+    var content = Model.Content;
+    var settings = Model.Settings;
+}
+<div class="alert @(settings.Value("variant") != "" ? settings.Value("variant") : "alert-primary")" role="alert">
+  @Html.Raw(content.Value("text"))
+</div>
