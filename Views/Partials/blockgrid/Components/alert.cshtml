@@ -3,6 +3,17 @@
     var content = Model.Content;
     var settings = Model.Settings;
 }
-<div class="alert @(settings.Value("variant") != "" ? settings.Value("variant") : "alert-primary")" role="alert">
+<div 
+  class="alert 
+  @(settings.Value("variant") != "" ? settings.Value("variant") : "alert-primary")
+  @(Convert.ToBoolean(@settings.Value("dismissable")) ? "alert-dismissible fade show" : String.Empty)
+  " role="alert">
+  @if(@content.Value("heading") != ""){
+      <h4 class="alert-heading">@content.Value("heading")</h4>
+  }
+
   @Html.Raw(content.Value("text"))
+  @if(Convert.ToBoolean(@settings.Value("dismissable"))){
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  }
 </div>

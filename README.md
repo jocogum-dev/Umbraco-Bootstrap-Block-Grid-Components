@@ -22,7 +22,6 @@ A reusable collection of **Bootstrap-powered components** built for the **Umbrac
 
 ### Content Components
 
-* [ ] Hero Banner / Jumbotron
 * [ ] Cards
 * [ ] Media Object
 * [ ] Accordion
